@@ -13,7 +13,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 
-let dished = [
+let dishes = [
 {
     id:1,
     name:"Sushi",
@@ -36,7 +36,14 @@ let dished = [
     price: 5.75
 },
 
-]
+];
+// res.render takes two args string / name of view we want to put in the body second args has to be an object 
+// pass in my array of objects by dishes:dishes 
+app.get("/", (req, res) =>{
+res.render("index", {
+    dishes: dishes
+})
+})
 
 app.listen(PORT, ()=>{
     console.log(`Sever listening on:http://localhost${PORT}`)
