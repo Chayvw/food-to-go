@@ -1,2 +1,8 @@
 <h4>Welcome to food to go </h4>
 <h5>Available foods to order </h5>
+
+{{#each dishes}}
+<h4>{{id}}. {{name}}</h4>
+<h5>Price: ${{price}}</h5>
+
+{{/each}}

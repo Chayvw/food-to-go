@@ -6,7 +6,9 @@ const app = express();
 
 const PORT = process.env.PORT|| 8080;
 
-app.engine("handlebars", exphbs({defaultLayout:"main"}));
+app.engine("handlebars", exphbs({extname: "hbs",
+defaultLayout: false,
+layoutsDir: "views/layouts/"}));
 app.set("view engine" , "handlebars");
 
 app.use(express.urlencoded({ extended: true }));
